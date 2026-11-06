@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TurnProof Acoustic Verification Pipeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-canvas: #070A12;
+      --bg-surface: #0E1422;
+      --bg-elevated: #151D30;
+      --text-primary: #F4F6FB;
+      --text-secondary: #9BA3B8;
+      --text-muted: #5E677E;
+      --accent-copper: #F08C4B;
+      --accent-cyan: #38BDF8;
+      --accent-mint: #34D399;
+      --accent-coral: #FB7185;
+      --border-glass: rgba(255, 255, 255, 0.11);
+      --copper-tint: rgba(240, 140, 75, 0.14);
+      --cyan-tint: rgba(56, 189, 248, 0.14);
+      --mint-tint: rgba(52, 211, 153, 0.14);
+      --coral-tint: rgba(251, 113, 133, 0.14);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-sans: 'DM Sans', sans-serif;
+      --font-mono: 'Roboto Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      padding: 36px;
+      width: 1280px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-copper);
+      margin-bottom: 6px;
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+
+    .subtitle {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+
+    .badge {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-glass);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+    }
+
+    .diagram-frame {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 0;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .node-box {
+      fill: var(--bg-surface);
+      stroke: var(--border-glass);
+      stroke-width: 1.5;
+    }
+
+    .node-copper {
+      fill: var(--bg-surface);
+      stroke: var(--accent-copper);
+      stroke-width: 1.75;
+    }
+
+    .node-cyan {
+      fill: var(--bg-surface);
+      stroke: var(--accent-cyan);
+      stroke-width: 1.75;
+    }
+
+    .node-mint {
+      fill: var(--bg-surface);
+      stroke: var(--accent-mint);
+      stroke-width: 1.75;
+    }
+
+    .pill-copper {
+      fill: var(--copper-tint);
+    }
+
+    .pill-cyan {
+      fill: var(--cyan-tint);
+    }
+
+    .pill-mint {
+      fill: var(--mint-tint);
+    }
+
+    .pill-coral {
+      fill: var(--coral-tint);
+    }
+
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      fill: var(--accent-copper);
+    }
+
+    .node-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      fill: var(--text-primary);
+    }
+
+    .node-body {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      fill: var(--text-secondary);
+    }
+
+    .node-code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      fill: var(--text-primary);
+    }
+
+    .edge-line {
+      stroke: var(--accent-copper);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .edge-cyan {
+      stroke: var(--accent-cyan);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .edge-mint {
+      stroke: var(--accent-mint);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .edge-label {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      fill: var(--text-secondary);
+    }
+
+    .arrow-copper {
+      fill: var(--accent-copper);
+    }
+
+    .arrow-cyan {
+      fill: var(--accent-cyan);
+    }
+
+    .arrow-mint {
+      fill: var(--accent-mint);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-glass);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <div class="eyebrow">TurnProof System Architecture · Acoustic Cinema Pipeline</div>
+      <div class="title">From Raw LLM Agent Draft to Verified Spoken Context &amp; Bug-Bounty Packet</div>
+    </div>
+    <div class="badge-row">
+      <span class="badge">TTS: assemblyai-tts-1 (24 kHz PCM)</span>
+      <span class="badge">STT: universal-3-5-pro</span>
+    </div>
+  </div>
+
+  <div class="diagram-frame">
+    <svg viewBox="0 0 1208 390" role="img" aria-label="TurnProof four-stage acoustic verification pipeline">
+      <defs>
+        <marker id="arrowCopper" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" class="arrow-copper" />
+        </marker>
+        <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" class="arrow-cyan" />
+        </marker>
+        <marker id="arrowMint" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" class="arrow-mint" />
+        </marker>
+      </defs>
+
+      <!-- Stage 1: Prompt Compiler -->
+      <rect x="0" y="24" width="262" height="330" rx="16" class="node-copper" />
+      <rect x="20" y="44" width="118" height="26" rx="13" class="pill-copper" />
+      <text x="32" y="62" class="step-num">01 · COMPILER</text>
+      <text x="20" y="102" class="node-title">Pre-Flight Sanitizer</text>
+      <text x="20" y="130" class="node-body">Strips vocalized stage tags</text>
+      <text x="20" y="150" class="node-body">and formats readback payloads.</text>
+      <rect x="20" y="176" width="222" height="72" rx="10" class="node-box" />
+      <text x="32" y="202" class="node-code">Raw: [pause] **RX-409**</text>
+      <text x="32" y="228" class="node-code">Out: R X 4 0 9</text>
+      <text x="20" y="280" class="node-body">Splits streams &gt; 2000 chars</text>
+      <text x="20" y="300" class="node-body">at sentence boundaries and</text>
+      <text x="20" y="320" class="node-body">flags prosody drift risks.</text>
+
+      <!-- Connector 1 -> 2 -->
+      <line x1="262" y1="189" x2="312" y2="189" class="edge-line" marker-end="url(#arrowCopper)" />
+      <text x="287" y="173" text-anchor="middle" class="edge-label">SSE</text>
+
+      <!-- Stage 2: AssemblyAI TTS Stream -->
+      <rect x="316" y="24" width="262" height="330" rx="16" class="node-cyan" />
+      <rect x="336" y="44" width="144" height="26" rx="13" class="pill-cyan" />
+      <text x="348" y="62" class="step-num">02 · TTS STREAM</text>
+      <text x="336" y="102" class="node-title">POST /v1/speech/events</text>
+      <text x="336" y="130" class="node-body">Streams 24 kHz PCM16 audio</text>
+      <text x="336" y="150" class="node-body">chunks plus WordBoundaries.</text>
+      <rect x="336" y="176" width="222" height="72" rx="10" class="node-box" />
+      <text x="348" y="202" class="node-code">AudioChunk (PCM16)</text>
+      <text x="348" y="228" class="node-code">WordBoundaries (ms)</text>
+      <text x="336" y="280" class="node-body">Captures X-Request-Id,</text>
+      <text x="336" y="300" class="node-body">Server-Timing, and TTFB</text>
+      <text x="336" y="320" class="node-body">from live SSE response.</text>
+
+      <!-- Connector 2 -> 3 (Upper: Barge-In Scissor) -->
+      <line x1="578" y1="120" x2="630" y2="120" class="edge-cyan" marker-end="url(#arrowCyan)" />
+      <text x="604" y="104" text-anchor="middle" class="edge-label">t_cut</text>
+
+      <!-- Connector 2 -> 3 (Lower: WAV Audio) -->
+      <line x1="578" y1="265" x2="630" y2="265" class="edge-mint" marker-end="url(#arrowMint)" />
+      <text x="604" y="249" text-anchor="middle" class="edge-label">WAV</text>
+
+      <!-- Stage 3A: Barge-In Scissor (Top Card) -->
+      <rect x="634" y="24" width="262" height="154" rx="16" class="node-copper" />
+      <rect x="654" y="42" width="150" height="24" rx="12" class="pill-copper" />
+      <text x="666" y="59" class="step-num">03A · BARGE-IN CUT</text>
+      <text x="654" y="92" class="node-title">Waveform Scissor</text>
+      <text x="654" y="118" class="node-body">Slices heard vs clipped tokens</text>
+      <text x="654" y="138" class="node-body">at caller interruption ms for</text>
+      <text x="654" y="158" class="node-body">committed LLM transcript.</text>
+
+      <!-- Stage 3B: Universal-3.5 Pro Verifier (Bottom Card) -->
+      <rect x="634" y="200" width="262" height="154" rx="16" class="node-mint" />
+      <rect x="654" y="218" width="168" height="24" rx="12" class="pill-mint" />
+      <text x="666" y="235" class="step-num">03B · STT READBACK</text>
+      <text x="654" y="268" class="node-title">Universal-3.5 Pro Lab</text>
+      <text x="654" y="294" class="node-body">Transcribes synthesized WAV</text>
+      <text x="654" y="314" class="node-body">via POST /v2/transcript and</text>
+      <text x="654" y="334" class="node-body">grades critical entities.</text>
+
+      <!-- Connectors 3A & 3B -> 4 -->
+      <line x1="896" y1="101" x2="946" y2="155" class="edge-line" marker-end="url(#arrowCopper)" />
+      <line x1="896" y1="277" x2="946" y2="225" class="edge-mint" marker-end="url(#arrowMint)" />
+
+      <!-- Stage 4: Export & Bug Bounty Studio -->
+      <rect x="950" y="24" width="258" height="330" rx="16" class="node-box" />
+      <rect x="970" y="44" width="154" height="26" rx="13" class="pill-coral" />
+      <text x="982" y="62" class="step-num">04 · LEDGER &amp; SHIP</text>
+      <text x="970" y="102" class="node-title">Code &amp; Bounty Export</text>
+      <text x="970" y="130" class="node-body">Generates production code</text>
+      <text x="970" y="150" class="node-body">and verified bug packets.</text>
+      <rect x="970" y="176" width="218" height="86" rx="10" class="node-box" />
+      <text x="982" y="202" class="node-code">sliceAtBargeIn(words, ms)</text>
+      <text x="982" y="226" class="node-code">X-Request-Id Evidence</text>
+      <text x="982" y="250" class="node-code">Repro curl + JSON Packet</text>
+      <text x="970" y="294" class="node-body">Persists verified runs to</text>
+      <text x="970" y="314" class="node-body">local ledger for comparison.</text>
+    </svg>
+  </div>
+
+  <div class="footer">
+    <span>Read direction: Left to Right (Draft Intake -> SSE Synthesis -> Barge-In &amp; STT Audit -> Production Export)</span>
+    <span>Tokens: #070A12 Canvas · #F08C4B Copper Heard · #38BDF8 Cyan Wave · #34D399 Mint Verified</span>
+  </div>
+</body>
+</html>
