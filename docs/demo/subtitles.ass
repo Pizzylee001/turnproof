@@ -1,0 +1,28 @@
+[Script Info]
+Title: TurnProof Demo Walkthrough Subtitles
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: None
+PlayResX: 1440
+PlayResY: 900
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,DejaVu Sans,24,&H00F4F6FB,&H000000FF,&H00070A12,&H80070A12,-1,0,0,0,100,100,0.5,0,3,10,2,2,40,40,36,1
+Style: Accent,DejaVu Sans,24,&H004BF08C,&H000000FF,&H00070A12,&H80070A12,-1,0,0,0,100,100,0.5,0,3,10,2,2,40,40,36,1
+Style: Defect,DejaVu Sans,24,&H008571FB,&H000000FF,&H00070A12,&H80070A12,-1,0,0,0,100,100,0.5,0,3,10,2,2,40,40,36,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.80,0:00:07.00,Default,,0,0,0,,When an LLM voice agent takes a call, mid-sentence caller barge-ins and unsanitized stage tags break conversation state.
+Dialogue: 0,0:00:07.10,0:00:13.68,Default,,0,0,0,,TurnProof solves this for AssemblyAI Text-to-Speech.
+Dialogue: 0,0:00:14.50,0:00:19.20,Accent,,0,0,0,,[Voice Agent Audio · 4,620ms]: "Thanks for calling Alliance Appliance Repair. Your booking code is 4-9-3-A..." [Barge-In Cut]
+Dialogue: 0,0:00:19.50,0:00:28.80,Default,,0,0,0,,The acoustic waveform scissor slices the turn at the exact caller interruption millisecond, so unreached words never pollute agent memory.
+Dialogue: 0,0:00:29.80,0:00:34.00,Defect,,0,0,0,,[Defect Audio]: "Pause. Thanks for calling..." (Vocalizing stage tag [pause])
+Dialogue: 0,0:00:36.00,0:00:46.80,Default,,0,0,0,,In Studio, the pre-flight compiler catches vocalized tags like bracket pause before billing a character, and formats alphanumeric codes for clean spoken cadence.
+Dialogue: 0,0:00:47.50,0:00:57.30,Default,,0,0,0,,At the interrupt cut-point, unreached entities like prescription codes and prices are tagged as withheld, and patched directly into the LLM conversation state.
+Dialogue: 0,0:00:59.50,0:01:12.50,Default,,0,0,0,,In Verify, TurnProof wraps synthesized PCM audio into a container and transcribes it back through Universal-3.5 Pro to verify that every entity survives synthesis.
+Dialogue: 0,0:01:13.50,0:01:23.00,Default,,0,0,0,,Sanitized turns achieve a one hundred percent entity lock, while unsanitized drafts fail due to vocalized stage tags transcribed in the readback.
+Dialogue: 0,0:01:25.00,0:01:35.10,Default,,0,0,0,,In Ledger, inspect reproducible bug-bounty telemetry with live request IDs, and copy production TypeScript or Python barge-in handlers.
+Dialogue: 0,0:01:36.00,0:01:41.20,Accent,,0,0,0,,TurnProof: acoustic precision for production voice agents on AssemblyAI.
