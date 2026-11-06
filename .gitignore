@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# secrets & runtime data
+*api_key*
+.data/
+test-results/
+playwright-report/
+
