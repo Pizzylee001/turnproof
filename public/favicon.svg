@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TurnProof Acoustic Scissor Icon">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E1422" />
+      <stop offset="100%" stop-color="#070A12" />
+    </linearGradient>
+    <linearGradient id="copperGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="100%" stop-color="#F08C4B" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Midnight & Copper-Rim Rounded Acoustic Badge -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="#F08C4B" stroke-width="2" stroke-opacity="0.45" />
+
+  <!-- Heard Waveform Bars (Left of Barge-In Cut: Burnished Copper & Electric Cyan) -->
+  <rect x="11" y="25" width="4" height="14" rx="2" fill="url(#cyanGrad)" />
+  <rect x="18" y="17" width="4" height="30" rx="2" fill="url(#copperGrad)" />
+  <rect x="25" y="21" width="4" height="22" rx="2" fill="url(#copperGrad)" />
+
+  <!-- Vertical Barge-In Scissor Cut Line & Playhead Handle -->
+  <line x1="34" y1="10" x2="34" y2="54" stroke="#F08C4B" stroke-width="2.5" stroke-linecap="round" />
+  <circle cx="34" cy="12" r="3.5" fill="#F08C4B" />
+  <circle cx="34" cy="52" r="3.5" fill="#34D399" />
+
+  <!-- Clipped Waveform Bars (Right of Barge-In Cut: Muted Cyan) -->
+  <rect x="41" y="23" width="4" height="18" rx="2" fill="#38BDF8" fill-opacity="0.42" />
+  <rect x="48" y="28" width="4" height="8" rx="2" fill="#38BDF8" fill-opacity="0.28" />
+</svg>

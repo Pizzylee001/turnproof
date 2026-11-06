@@ -29,6 +29,13 @@ export const metadata: Metadata = {
   title: 'TurnProof | AssemblyAI-TTS-1 & Universal-3.5 Pro Voice Turn Workbench',
   description:
     'Pre-flight prompt compiler, millisecond WordBoundaries barge-in context slicer, and Universal-3.5 Pro round-trip entity readback verifier for voice agents.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
