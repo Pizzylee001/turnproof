@@ -1,0 +1,908 @@
+[
+  {
+    "id": "TP-2026-01",
+    "title": "Appliance Dispatch Readback (Sanitized)",
+    "scenario": "Customer Service Booking Confirmation",
+    "createdAt": "2026-11-06T14:43:07.120Z",
+    "voiceId": "aai-jane",
+    "language": "english",
+    "rawPrompt": "[pause] Thanks for calling Alliance Appliance Repair! Your booking code is 493A, confirmed for $12.50 at 2:15 PM.",
+    "compiledPrompt": "Thanks for calling Alliance Appliance Repair. Your booking code is 4-9-3-A, confirmed for $12.50 at 2:15 PM.",
+    "synthesizedText": "Thanks for calling Alliance Appliance Repair. Your booking code is 4-9-3-A, confirmed for $12.50 at 2:15 PM.",
+    "wasCompiled": true,
+    "requestId": "22a468be-3020-4188-8176-3f828e992254",
+    "serverTiming": "open;dur=17.2, model;dur=52.3, ttfa;dur=69.6",
+    "billedCharacters": 108,
+    "audioDurationMs": 10000,
+    "audioChunkCount": 125,
+    "audioUrl": "/samples/tp-01-compiled.wav",
+    "waveformPeaks": [
+      0.523,
+      0.733,
+      0.253,
+      0.26,
+      1,
+      0.717,
+      0.473,
+      0.897,
+      0.818,
+      0.523,
+      0.238,
+      0.596,
+      0.494,
+      0.259,
+      0.236,
+      0.419,
+      0.179,
+      0.08,
+      0.08,
+      0.634,
+      0.552,
+      0.3,
+      0.379,
+      0.709,
+      0.803,
+      0.313,
+      0.123,
+      0.679,
+      0.678,
+      0.159,
+      0.127,
+      0.656,
+      0.654,
+      0.498,
+      0.08,
+      0.082,
+      0.531,
+      0.357,
+      0.08,
+      0.378,
+      0.332,
+      0.08,
+      0.08,
+      0.417,
+      0.448,
+      0.581,
+      0.435,
+      0.299,
+      0.08,
+      0.881,
+      0.354,
+      0.895,
+      0.713,
+      0.265,
+      0.246,
+      0.377,
+      0.327,
+      0.334,
+      0.348,
+      0.083,
+      0.254,
+      0.119,
+      0.375,
+      0.366,
+      0.184,
+      0.458,
+      0.188,
+      0.426,
+      0.186,
+      0.149,
+      0.08,
+      0.08
+    ],
+    "wordBoundaries": [
+      {
+        "word": "Thanks",
+        "start": 96,
+        "end": 290,
+        "confidence": 0.882
+      },
+      {
+        "word": "for",
+        "start": 338,
+        "end": 451,
+        "confidence": 0.642
+      },
+      {
+        "word": "calling",
+        "start": 500,
+        "end": 790,
+        "confidence": 0.832
+      },
+      {
+        "word": "Alliance",
+        "start": 983,
+        "end": 1338,
+        "confidence": 0.73
+      },
+      {
+        "word": "Appliance",
+        "start": 1403,
+        "end": 1838,
+        "confidence": 0.657
+      },
+      {
+        "word": "Repair.",
+        "start": 1951,
+        "end": 2225,
+        "confidence": 0.971
+      },
+      {
+        "word": "Your",
+        "start": 2693,
+        "end": 2790,
+        "confidence": 0.81
+      },
+      {
+        "word": "booking",
+        "start": 2854,
+        "end": 3096,
+        "confidence": 0.982
+      },
+      {
+        "word": "code",
+        "start": 3177,
+        "end": 3516,
+        "confidence": 0.966
+      },
+      {
+        "word": "is",
+        "start": 3580,
+        "end": 3612,
+        "confidence": 0.993
+      },
+      {
+        "word": "4-9-3-A,",
+        "start": 3741,
+        "end": 5596,
+        "confidence": 0.865
+      },
+      {
+        "word": "confirmed",
+        "start": 6064,
+        "end": 6564,
+        "confidence": 0.954
+      },
+      {
+        "word": "for",
+        "start": 6564,
+        "end": 6693,
+        "confidence": 0.766
+      },
+      {
+        "word": "$12.50",
+        "start": 6725,
+        "end": 7887,
+        "confidence": 0.721
+      },
+      {
+        "word": "at",
+        "start": 8419,
+        "end": 8516,
+        "confidence": 0.951
+      },
+      {
+        "word": "2:15",
+        "start": 8580,
+        "end": 9177,
+        "confidence": 0.907
+      },
+      {
+        "word": "PM.",
+        "start": 9290,
+        "end": 9564,
+        "confidence": 0.722
+      }
+    ],
+    "sttTranscript": "Thanks for calling Alliance Appliance Repair. Your booking code is 493A, confirmed for $12.50 at 2:15 PM.",
+    "sttConfidence": 0.987,
+    "verdict": "PASS",
+    "accuracyPercent": 100,
+    "entities": [
+      {
+        "entity": "493A",
+        "category": "code",
+        "matched": true
+      },
+      {
+        "entity": "$12.50",
+        "category": "currency",
+        "matched": true
+      },
+      {
+        "entity": "2:15 PM",
+        "category": "time",
+        "matched": true
+      }
+    ],
+    "leakedBracketWords": [],
+    "bountyFinding": "Sanitized prompt stripped [pause] and dashed 4-9-3-A, achieving 100% Universal-3.5 Pro entity readback lock.",
+    "transcriptId": "550b670d-3d85-48a1-bbf3-96aab460f4d1"
+  },
+  {
+    "id": "TP-2026-02",
+    "title": "Uncompiled Bracket Tag & Code Leak (Bug Proof)",
+    "scenario": "Raw LLM Stage Tag Vulnerability",
+    "createdAt": "2026-11-06T14:44:17.056Z",
+    "voiceId": "aai-jane",
+    "language": "english",
+    "rawPrompt": "[pause] Thanks for calling Alliance Appliance Repair! Your booking code is 493A, confirmed for $12.50 at 2:15 PM.",
+    "compiledPrompt": "Thanks for calling Alliance Appliance Repair. Your booking code is 4-9-3-A, confirmed for $12.50 at 2:15 PM.",
+    "synthesizedText": "[pause] Thanks for calling Alliance Appliance Repair! Your booking code is 493A, confirmed for $12.50 at 2:15 PM.",
+    "wasCompiled": false,
+    "requestId": "f1d89f3d-64a8-4570-a68c-4e87d311b3fa",
+    "serverTiming": "open;dur=12.1, model;dur=22.6, ttfa;dur=34.8",
+    "billedCharacters": 113,
+    "audioDurationMs": 9760,
+    "audioChunkCount": 122,
+    "audioUrl": "/samples/tp-02-raw-leak.wav",
+    "waveformPeaks": [
+      0.08,
+      0.08,
+      0.951,
+      0.476,
+      0.152,
+      0.08,
+      0.08,
+      0.611,
+      0.449,
+      0.302,
+      0.388,
+      0.943,
+      0.5,
+      0.559,
+      0.689,
+      0.494,
+      0.21,
+      0.182,
+      0.494,
+      0.256,
+      0.239,
+      0.3,
+      0.205,
+      0.08,
+      0.08,
+      0.411,
+      0.739,
+      0.768,
+      0.557,
+      0.244,
+      1,
+      0.387,
+      0.267,
+      0.418,
+      0.746,
+      0.692,
+      0.655,
+      0.438,
+      0.547,
+      0.346,
+      0.366,
+      0.14,
+      0.08,
+      0.284,
+      0.537,
+      0.546,
+      0.6,
+      0.273,
+      0.147,
+      0.779,
+      0.377,
+      0.803,
+      0.713,
+      0.315,
+      0.299,
+      0.302,
+      0.278,
+      0.194,
+      0.389,
+      0.191,
+      0.2,
+      0.117,
+      0.361,
+      0.289,
+      0.13,
+      0.334,
+      0.294,
+      0.283,
+      0.181,
+      0.175,
+      0.08,
+      0.08
+    ],
+    "wordBoundaries": [
+      {
+        "word": "[pause]",
+        "start": 1000,
+        "end": 1000,
+        "confidence": 0
+      },
+      {
+        "word": "Thanks",
+        "start": 1000,
+        "end": 1177,
+        "confidence": 0.724
+      },
+      {
+        "word": "for",
+        "start": 1242,
+        "end": 1355,
+        "confidence": 0.635
+      },
+      {
+        "word": "calling",
+        "start": 1387,
+        "end": 1677,
+        "confidence": 0.835
+      },
+      {
+        "word": "Alliance",
+        "start": 1806,
+        "end": 2226,
+        "confidence": 0.789
+      },
+      {
+        "word": "Appliance",
+        "start": 2274,
+        "end": 2694,
+        "confidence": 0.637
+      },
+      {
+        "word": "Repair!",
+        "start": 2758,
+        "end": 3032,
+        "confidence": 0.884
+      },
+      {
+        "word": "Your",
+        "start": 3484,
+        "end": 3597,
+        "confidence": 0.812
+      },
+      {
+        "word": "booking",
+        "start": 3662,
+        "end": 3920,
+        "confidence": 0.952
+      },
+      {
+        "word": "code",
+        "start": 3984,
+        "end": 4258,
+        "confidence": 0.985
+      },
+      {
+        "word": "is",
+        "start": 4371,
+        "end": 4420,
+        "confidence": 0.975
+      },
+      {
+        "word": "493A,",
+        "start": 4533,
+        "end": 5517,
+        "confidence": 0.491
+      },
+      {
+        "word": "confirmed",
+        "start": 5920,
+        "end": 6420,
+        "confidence": 0.908
+      },
+      {
+        "word": "for",
+        "start": 6469,
+        "end": 6565,
+        "confidence": 0.77
+      },
+      {
+        "word": "$12.50",
+        "start": 6565,
+        "end": 7775,
+        "confidence": 0.8
+      },
+      {
+        "word": "at",
+        "start": 8259,
+        "end": 8356,
+        "confidence": 0.828
+      },
+      {
+        "word": "2:15",
+        "start": 8421,
+        "end": 9001,
+        "confidence": 0.933
+      },
+      {
+        "word": "PM.",
+        "start": 9130,
+        "end": 9340,
+        "confidence": 0.466
+      }
+    ],
+    "sttTranscript": "Pause. Thanks for calling Alliance Appliance Repair. Your booking code is 493A, confirmed for $12.50 at 2:15 PM.",
+    "sttConfidence": 0.993,
+    "verdict": "FAIL",
+    "accuracyPercent": 67,
+    "entities": [
+      {
+        "entity": "493A",
+        "category": "code",
+        "matched": true
+      },
+      {
+        "entity": "$12.50",
+        "category": "currency",
+        "matched": true
+      },
+      {
+        "entity": "2:15 PM",
+        "category": "time",
+        "matched": true
+      }
+    ],
+    "leakedBracketWords": [
+      "pause"
+    ],
+    "bountyFinding": "BUG PROOF: Sending raw [pause] to POST /v1/speech/events causes assemblyai-tts-1 to convert square brackets to round brackets and speak the literal word \"Pause\" aloud at 0ms-490ms.",
+    "transcriptId": "4745c80f-5d87-4037-bb6a-f98618e8df79"
+  },
+  {
+    "id": "TP-2026-03",
+    "title": "Harbor Cardiology Triage (Male Voice)",
+    "scenario": "Healthcare Intake & Copay Verification",
+    "createdAt": "2026-11-06T14:45:27.311Z",
+    "voiceId": "aai-felix",
+    "language": "english",
+    "rawPrompt": "[wait] Good morning from Harbor Cardiology! Your reference code is 842B for room 304 at 9:45 AM, copay $25.00.",
+    "compiledPrompt": "Good morning from Harbor Cardiology. Your reference code is 8-4-2-B for room 304 at 9:45 AM, copay $25.00.",
+    "synthesizedText": "Good morning from Harbor Cardiology. Your reference code is 8-4-2-B for room 304 at 9:45 AM, copay $25.00.",
+    "wasCompiled": true,
+    "requestId": "959db32c-df1a-4485-9663-d3b66f4227bc",
+    "serverTiming": "open;dur=11.6, model;dur=87.7, ttfa;dur=99.4",
+    "billedCharacters": 106,
+    "audioDurationMs": 10480,
+    "audioChunkCount": 131,
+    "audioUrl": "/samples/tp-03-felix-clinic.wav",
+    "waveformPeaks": [
+      0.381,
+      0.121,
+      0.691,
+      0.428,
+      0.155,
+      0.25,
+      0.575,
+      0.835,
+      0.494,
+      0.653,
+      0.41,
+      0.574,
+      0.327,
+      0.292,
+      0.102,
+      0.08,
+      0.568,
+      1,
+      0.465,
+      0.744,
+      0.222,
+      0.247,
+      0.585,
+      0.308,
+      0.095,
+      0.774,
+      0.483,
+      0.08,
+      0.745,
+      0.242,
+      0.224,
+      0.213,
+      0.394,
+      0.08,
+      0.08,
+      0.5,
+      0.445,
+      0.277,
+      0.08,
+      0.535,
+      0.254,
+      0.345,
+      0.202,
+      0.917,
+      0.407,
+      0.08,
+      0.395,
+      0.208,
+      0.892,
+      0.247,
+      0.565,
+      0.244,
+      0.665,
+      0.427,
+      0.397,
+      0.504,
+      0.221,
+      0.08,
+      0.08,
+      0.688,
+      0.376,
+      0.81,
+      0.299,
+      0.43,
+      0.211,
+      0.61,
+      0.082,
+      0.547,
+      0.39,
+      0.087,
+      0.08,
+      0.08
+    ],
+    "wordBoundaries": [
+      {
+        "word": "Good",
+        "start": 32,
+        "end": 145,
+        "confidence": 0.979
+      },
+      {
+        "word": "morning",
+        "start": 257,
+        "end": 548,
+        "confidence": 0.721
+      },
+      {
+        "word": "from",
+        "start": 661,
+        "end": 838,
+        "confidence": 0.455
+      },
+      {
+        "word": "Harbor",
+        "start": 902,
+        "end": 1176,
+        "confidence": 0.499
+      },
+      {
+        "word": "Cardiology.",
+        "start": 1241,
+        "end": 1983,
+        "confidence": 0.476
+      },
+      {
+        "word": "Your",
+        "start": 2370,
+        "end": 2482,
+        "confidence": 0.667
+      },
+      {
+        "word": "reference",
+        "start": 2499,
+        "end": 3015,
+        "confidence": 0.731
+      },
+      {
+        "word": "code",
+        "start": 3095,
+        "end": 3353,
+        "confidence": 0.701
+      },
+      {
+        "word": "is",
+        "start": 3418,
+        "end": 3450,
+        "confidence": 0.553
+      },
+      {
+        "word": "8-4-2-B",
+        "start": 3724,
+        "end": 4643,
+        "confidence": 0.822
+      },
+      {
+        "word": "for",
+        "start": 5175,
+        "end": 5288,
+        "confidence": 0.615
+      },
+      {
+        "word": "room",
+        "start": 5352,
+        "end": 5514,
+        "confidence": 0.204
+      },
+      {
+        "word": "304",
+        "start": 5578,
+        "end": 6416,
+        "confidence": 0.325
+      },
+      {
+        "word": "at",
+        "start": 6868,
+        "end": 6900,
+        "confidence": 0.902
+      },
+      {
+        "word": "9:45",
+        "start": 6981,
+        "end": 7851,
+        "confidence": 0.614
+      },
+      {
+        "word": "AM,",
+        "start": 8158,
+        "end": 8206,
+        "confidence": 0.467
+      },
+      {
+        "word": "copay",
+        "start": 8641,
+        "end": 8996,
+        "confidence": 0.744
+      },
+      {
+        "word": "$25.00.",
+        "start": 9141,
+        "end": 10076,
+        "confidence": 0.264
+      }
+    ],
+    "sttTranscript": "Good morning from Harbor Cardiology. Your reference code is 842B for room 304 at 9:45 AM. Copay $25.",
+    "sttConfidence": 0.987,
+    "verdict": "PASS",
+    "accuracyPercent": 100,
+    "entities": [
+      {
+        "entity": "842B",
+        "category": "code",
+        "matched": true
+      },
+      {
+        "entity": "$25.00",
+        "category": "currency",
+        "matched": true
+      },
+      {
+        "entity": "9:45 AM",
+        "category": "time",
+        "matched": true
+      }
+    ],
+    "leakedBracketWords": [],
+    "bountyFinding": "Verified aai-felix voice with dashed alphanumeric code 8-4-2-B and currency $25.00 across Universal-3.5 Pro.",
+    "transcriptId": "f0a01f01-9246-4dbb-941b-1fb1b33ecee1"
+  },
+  {
+    "id": "TP-2026-04",
+    "title": "Iberia Express Booking (Spanish Multilingual)",
+    "scenario": "Spanish Voice Synthesis & STT Verification",
+    "createdAt": "2026-11-06T14:45:34.358Z",
+    "voiceId": "aai-jane",
+    "language": "spanish",
+    "rawPrompt": "[pause] Hola, gracias por llamar a Iberia Express. Su codigo de reserva es 729C por $45.00 a las 4:30 PM.",
+    "compiledPrompt": "Hola, gracias por llamar a Iberia Express. Su codigo de reserva es 7-2-9-C por $45.00 a las 4:30 PM.",
+    "synthesizedText": "Hola, gracias por llamar a Iberia Express. Su codigo de reserva es 7-2-9-C por $45.00 a las 4:30 PM.",
+    "wasCompiled": true,
+    "requestId": "e36715eb-7a71-4fa9-a338-dc563be7d54a",
+    "serverTiming": "open;dur=12.1, model;dur=21.9, ttfa;dur=34.0",
+    "billedCharacters": 100,
+    "audioDurationMs": 9920,
+    "audioChunkCount": 124,
+    "audioUrl": "/samples/tp-04-spanish.wav",
+    "waveformPeaks": [
+      0.08,
+      0.08,
+      1,
+      0.992,
+      0.37,
+      0.08,
+      0.08,
+      0.678,
+      0.546,
+      0.479,
+      0.169,
+      0.583,
+      0.769,
+      0.903,
+      0.676,
+      0.58,
+      0.678,
+      0.406,
+      0.593,
+      0.572,
+      0.192,
+      0.158,
+      0.338,
+      0.111,
+      0.08,
+      0.08,
+      0.317,
+      0.356,
+      0.836,
+      0.542,
+      0.454,
+      0.408,
+      0.618,
+      0.545,
+      0.53,
+      0.239,
+      0.361,
+      0.171,
+      0.64,
+      0.277,
+      0.536,
+      0.258,
+      0.69,
+      0.24,
+      0.617,
+      0.422,
+      0.226,
+      0.307,
+      0.213,
+      0.279,
+      0.21,
+      0.692,
+      0.274,
+      0.679,
+      0.31,
+      0.666,
+      0.522,
+      0.123,
+      0.514,
+      0.203,
+      0.295,
+      0.783,
+      0.333,
+      0.377,
+      0.431,
+      0.245,
+      0.294,
+      0.26,
+      0.151,
+      0.08,
+      0.08,
+      0.08
+    ],
+    "wordBoundaries": [
+      {
+        "word": "Hola,",
+        "start": 354,
+        "end": 612,
+        "confidence": 0.211
+      },
+      {
+        "word": "gracias",
+        "start": 983,
+        "end": 1403,
+        "confidence": 0.28
+      },
+      {
+        "word": "por",
+        "start": 1467,
+        "end": 1661,
+        "confidence": 0.315
+      },
+      {
+        "word": "llamar",
+        "start": 1661,
+        "end": 1919,
+        "confidence": 0.178
+      },
+      {
+        "word": "a",
+        "start": 2209,
+        "end": 2225,
+        "confidence": 0.07
+      },
+      {
+        "word": "Iberia",
+        "start": 2290,
+        "end": 2709,
+        "confidence": 0.003
+      },
+      {
+        "word": "Express.",
+        "start": 2774,
+        "end": 3209,
+        "confidence": 0.415
+      },
+      {
+        "word": "Su",
+        "start": 3564,
+        "end": 3677,
+        "confidence": 0.491
+      },
+      {
+        "word": "codigo",
+        "start": 3726,
+        "end": 4161,
+        "confidence": 0.171
+      },
+      {
+        "word": "de",
+        "start": 4209,
+        "end": 4290,
+        "confidence": 0.455
+      },
+      {
+        "word": "reserva",
+        "start": 4290,
+        "end": 4726,
+        "confidence": 0.281
+      },
+      {
+        "word": "es",
+        "start": 4951,
+        "end": 5048,
+        "confidence": 0.014
+      },
+      {
+        "word": "7-2-9-C",
+        "start": 5097,
+        "end": 6581,
+        "confidence": 0.465
+      },
+      {
+        "word": "por",
+        "start": 6790,
+        "end": 6919,
+        "confidence": 0.358
+      },
+      {
+        "word": "$45.00",
+        "start": 6952,
+        "end": 7839,
+        "confidence": 0.104
+      },
+      {
+        "word": "a",
+        "start": 8016,
+        "end": 8032,
+        "confidence": 0
+      },
+      {
+        "word": "las",
+        "start": 8081,
+        "end": 8258,
+        "confidence": 0.344
+      },
+      {
+        "word": "4:30",
+        "start": 8323,
+        "end": 9000,
+        "confidence": 0.38
+      },
+      {
+        "word": "PM.",
+        "start": 9129,
+        "end": 9419,
+        "confidence": 0.241
+      }
+    ],
+    "transcriptId": "72c51241-6940-49b6-b553-364df20f69b7",
+    "sttTranscript": "Hola, gracias por llamar a Iberia Express. Su código de reserva es 729C por $45 a las 4:30 PM.",
+    "sttConfidence": 0.98,
+    "verdict": "PASS",
+    "accuracyPercent": 100,
+    "entities": [
+      {
+        "entity": "729C",
+        "category": "code",
+        "matched": true
+      },
+      {
+        "entity": "$45.00",
+        "category": "currency",
+        "matched": true
+      },
+      {
+        "entity": "4:30 PM",
+        "category": "time",
+        "matched": true
+      }
+    ],
+    "leakedBracketWords": [],
+    "bountyFinding": "Multilingual Spanish synthesis + Universal-3.5 Pro language detection verified."
+  }
+]
