@@ -8,6 +8,7 @@ import {
   Scissors,
   ShieldCheck,
   Archive,
+  FilmSlate,
   Key,
   CheckCircle,
   WarningCircle,
@@ -20,6 +21,7 @@ const NAV_ITEMS = [
   { href: '/studio', label: '02. Studio', icon: Scissors },
   { href: '/verify', label: '03. Verify', icon: ShieldCheck },
   { href: '/ledger', label: '04. Ledger', icon: Archive },
+  { href: '/demo', label: '05. Demo', icon: FilmSlate },
 ];
 
 export function AcousticShell({ children }: { children: React.ReactNode }) {
