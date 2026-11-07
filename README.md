@@ -3,14 +3,21 @@
 **Voice Agent Barge-In Context Slicer, Round-Trip Entity Readback Verifier, and Protocol Bug-Bounty Studio for AssemblyAI Text-to-Speech (`assemblyai-tts-1`) and `Universal-3.5 Pro` STT.**
 
 [![Live Demo](https://img.shields.io/badge/Live_Workbench-turnproof--zeta.vercel.app-F08C4B.svg)](https://turnproof-zeta.vercel.app)
+[![Watch Demo Video](https://img.shields.io/badge/YouTube-1_Min_Product_Video-FF0000.svg?logo=youtube&logoColor=white)](https://youtu.be/79B6u7H7IoQ)
 [![License: MIT](https://img.shields.io/badge/License-MIT-0E1422.svg)](./LICENSE)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.4-0E1422.svg)](https://nextjs.org/)
 [![AssemblyAI TTS](https://img.shields.io/badge/AssemblyAI-assemblyai--tts--1-38BDF8.svg)](https://www.assemblyai.com/docs/tts/getting-started/quickstart)
 [![Universal-3.5 Pro](https://img.shields.io/badge/STT_Verifier-universal--3--5--pro-34D399.svg)](https://www.assemblyai.com/)
 
-**Live Production Workbench:** [https://turnproof-zeta.vercel.app](https://turnproof-zeta.vercel.app)
+**Live Production Workbench:** [https://turnproof-zeta.vercel.app](https://turnproof-zeta.vercel.app) · **1-Minute Architecture & Product Video:** [https://youtu.be/79B6u7H7IoQ](https://youtu.be/79B6u7H7IoQ)
 
-![TurnProof Stage Console](./docs/screenshots/01-stage-acoustic-console.png)
+---
+
+## 1-Minute Architecture & Product Video
+
+[![Watch the TurnProof 1-Minute Architecture & Product Video](./docs/screenshots/01-stage-acoustic-console.png)](https://youtu.be/79B6u7H7IoQ)
+
+> **Watch on YouTube:** [https://youtu.be/79B6u7H7IoQ](https://youtu.be/79B6u7H7IoQ) (Click the preview above to watch the 60-second breakdown of the Pre-Flight Compiler, 24 kHz Acoustic Scissor, LLM Memory Patching, and Universal-3.5 Pro Verification Lab.)
 
 ---
 
